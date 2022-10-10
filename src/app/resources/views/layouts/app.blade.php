@@ -75,7 +75,6 @@
                 </div>
             </div>
         </nav>
-
         @guest
             @if (Route::has('login'))
                 <main>

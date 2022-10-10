@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SpotController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,5 @@ Route::get('/simulator', [App\Http\Controllers\HomeController::class, 'simulator
 Route::get('/information', [App\Http\Controllers\HomeController::class, 'information'])->name('information');
 Route::get('/setting', [App\Http\Controllers\HomeController::class, 'setting'])->name('setting');
 Route::get('/help', [App\Http\Controllers\HomeController::class, 'help'])->name('help');
+
+Route::post('/spot-store', [SpotController::class, 'spotStore'])->name('setting');

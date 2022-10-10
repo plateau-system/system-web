@@ -23,32 +23,44 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $user = \Auth::user();
+
+        return view('home', compact('user'));
     }
 
     public function chart()
     {
-        return view('home');
+        $user = \Auth::user();
+
+        return view('home', compact('user'));
     }
 
     public function simulator()
     {
-        return view('home');
+        $user = \Auth::user();
+
+        return view('home', compact('user'));
     }
 
     public function information()
     {
-        return view('home');
+        $user = \Auth::user();
+
+        return view('home', compact('user'));
     }
 
     public function setting()
     {
-        return view('home');
+        $user = \Auth::user();
+
+        return view('home', compact('user'));
     }
 
     public function help()
     {
-        return view('home');
+        $user = \Auth::user();
+
+        return view('home', compact('user'));
     }
 
 
