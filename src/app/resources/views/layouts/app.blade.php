@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <div id="app">
@@ -75,9 +76,15 @@
             </div>
         </nav>
 
-        <main class="py-4">
-            @yield('content')
-        </main>
+        <div class="row" style='height: 92vh;'>
+            <div class="col-md-2 p-0">
+                @include('navibar')
+            </div>
+            <div class="col-md-10 p-0">
+                @include('top')
+            </div>
+        </div>
+        
     </div>
 </body>
 </html>
