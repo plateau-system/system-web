@@ -25,7 +25,7 @@
             </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 @foreach($spot as $spot)
-                  <a class="dropdown-item" href="/chart/{{ $spot['id']  }}">
+                  <a class="dropdown-item" href="/chart/{{ $spot['id'] }}">
                     {{ $spot['spots_name'] }}
                   </a>                
                 @endforeach 
