@@ -76,15 +76,30 @@
             </div>
         </nav>
 
-        <div class="row" style='height: 92vh;'>
-            <div class="col-md-2 p-0">
-                @include('navibar')
-            </div>
-            <div class="col-md-10 p-0">
-                @include('chart')
-            </div>
-        </div>
         
+
+        @guest
+            @if (Route::has('login'))
+                <main>
+                    @yield('content')
+                </main>
+            @else
+                <main>
+                    @yield('content')
+                </main>            
+            @endif
+        @else
+            @if (Route::has('home'))
+                <div class="row" style='height: 92vh;'>
+                    <div class="col-md-2 p-0">
+                        @include('navibar')
+                    </div>
+                    <div class="col-md-10 p-0">
+                        @include('chart')
+                    </div>
+                </div>
+            @endif
+        @endguest
     </div>
 </body>
 </html>
