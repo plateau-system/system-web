@@ -11,17 +11,31 @@
   <body>
     <div class="navigation">
       <ul>
-        <li class="list active">
-          <a href="{{ url('/home') }}">
+        <li class="list">
+          <a href="/top/{{ $user['id'] }}">
             <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
             <span class="title">Top</span>
           </a>
         </li>
         <li class="list">
-          <a href="{{ url('/chart') }}">
+          <li class="nav-item dropdown">
+            <a id="navbarDropdown" class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" v-pre>
             <span class="icon"><ion-icon name="bar-chart-outline"></ion-icon></span>
             <span class="title">Chart</span>
-          </a>
+            </a>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/chart-rate/{{ $user['id'] }}">
+                  Rate
+                </a>
+                <a class="dropdown-item" href="/chart-comparison/{{ $user['id'] }}">
+                  comparison
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+            </div>
+        </li>
         </li>
         <li class="list">
           <a href="{{ url('/simulator') }}">

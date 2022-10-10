@@ -6,24 +6,19 @@
     <title>Document</title>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
-    @foreach($spot as $spot)
     <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-6">
-          <div class="card">
-            <div class="card-name card-header">
-              <a>{{ $spot['spots_name'] }}</a>
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="card">
+                    <div class="card-name card-header">chart Comparison</div>
+                    <div class="card-body">
+                      
+                    </div>
+                </div>
             </div>
-            <div class="m-2 ms-5">
-              <a>{{ $spot['spots_name'] }}</a>
-            </div>           
-          </div>
         </div>
-      </div>
     </div>
-    @endforeach 
   </body>
-</html> 
+</html>

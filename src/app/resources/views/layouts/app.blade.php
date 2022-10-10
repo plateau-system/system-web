@@ -90,30 +90,44 @@
             <div class="col-md-2 p-0">
                 @include('navibar')
             </div>        
-            @if (Route::is('home'))
+            @if (Route::is('top'))
                 <div class="col-md-10 p-0">
                     @include('top')
+                </div>
+
+            @elseif (Route::is('chart-rate'))
+                <div class="col-md-10 p-0">
+                    @include('chartRate')
+                </div>
+            @elseif (Route::is('chart-comparison'))
+                <div class="col-md-10 p-0">
+                    @include('chartComparison')
                 </div>
             @elseif (Route::is('chart'))
                 <div class="col-md-10 p-0">
                     @include('chart')
-                </div>
+                </div>                
+
             @elseif (Route::is('simulator'))
                 <div class="col-md-10 p-0">
                     @include('simulator')
                 </div>
+
             @elseif (Route::is('information'))
                 <div class="col-md-10 p-0">
                     @include('information')
                 </div>
+
             @elseif (Route::is('setting'))
                 <div class="col-md-10 p-0">
                     @include('setting')
                 </div>
+
             @elseif (Route::is('help'))
                 <div class="col-md-10 p-0">
                     @include('help')
                 </div>
+
             @endif
         @endguest
         </div>

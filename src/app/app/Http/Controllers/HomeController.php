@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Spot;
 
 class HomeController extends Controller
 {
@@ -26,6 +27,13 @@ class HomeController extends Controller
         $user = \Auth::user();
 
         return view('home', compact('user'));
+    }
+
+    public function top($id)
+    {
+        $user = \Auth::user();
+        $spot = Spot::where('users_id', $id)->get();
+        return view('home', compact('user','spot'));
     }
 
     public function chart()
