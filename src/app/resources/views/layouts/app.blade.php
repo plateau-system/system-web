@@ -81,7 +81,7 @@
                 @include('navibar')
             </div>
             <div class="col-md-10 p-0">
-                @include('top')
+                @include('chart')
             </div>
         </div>
         
