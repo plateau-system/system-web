@@ -12,9 +12,9 @@
         <div class="row justify-content-center">
             <div class="col-md-10">
                 <div class="card">
-                    <div class="card-name card-header">Chart</div>
+                    <div class="card-name card-header">Setting</div>
+                    
                     <div class="card-body">
-                      
                     </div>
                 </div>
             </div>

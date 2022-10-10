@@ -25,4 +25,31 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function chart()
+    {
+        return view('home');
+    }
+
+    public function simulator()
+    {
+        return view('home');
+    }
+
+    public function information()
+    {
+        return view('home');
+    }
+
+    public function setting()
+    {
+        return view('home');
+    }
+
+    public function help()
+    {
+        return view('home');
+    }
+
+
 }

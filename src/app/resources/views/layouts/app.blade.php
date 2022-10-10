@@ -25,7 +25,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    PLATEAU System
+                    PLATEAU SYSTEM
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -76,30 +76,48 @@
             </div>
         </nav>
 
-        
-
         @guest
             @if (Route::has('login'))
                 <main>
                     @yield('content')
                 </main>
-            @else
+            @elseif (Route::has('register'))
                 <main>
                     @yield('content')
-                </main>            
+                </main>
             @endif
         @else
-            @if (Route::has('home'))
-                <div class="row" style='height: 92vh;'>
-                    <div class="col-md-2 p-0">
-                        @include('navibar')
-                    </div>
-                    <div class="col-md-10 p-0">
-                        @include('chart')
-                    </div>
+        <div class="row" style='height: 92vh; width: 100%'>
+            <div class="col-md-2 p-0">
+                @include('navibar')
+            </div>        
+            @if (Route::is('home'))
+                <div class="col-md-10 p-0">
+                    @include('top')
+                </div>
+            @elseif (Route::is('chart'))
+                <div class="col-md-10 p-0">
+                    @include('chart')
+                </div>
+            @elseif (Route::is('simulator'))
+                <div class="col-md-10 p-0">
+                    @include('simulator')
+                </div>
+            @elseif (Route::is('information'))
+                <div class="col-md-10 p-0">
+                    @include('information')
+                </div>
+            @elseif (Route::is('setting'))
+                <div class="col-md-10 p-0">
+                    @include('setting')
+                </div>
+            @elseif (Route::is('help'))
+                <div class="col-md-10 p-0">
+                    @include('help')
                 </div>
             @endif
         @endguest
+        </div>
     </div>
 </body>
 </html>

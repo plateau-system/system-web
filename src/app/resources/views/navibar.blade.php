@@ -12,31 +12,31 @@
     <div class="navigation">
       <ul>
         <li class="list active">
-          <a href="#">
+          <a href="{{ url('/home') }}">
             <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
             <span class="title">Top</span>
           </a>
         </li>
         <li class="list">
-          <a href="#">
-            <span class="icon"><ion-icon name="analytics-outline"></ion-icon></span>
-            <span class="title">Simulator</span>
-          </a>
-        </li>
-        <li class="list">
-          <a href="#">
+          <a href="{{ url('/chart') }}">
             <span class="icon"><ion-icon name="bar-chart-outline"></ion-icon></span>
             <span class="title">Chart</span>
           </a>
         </li>
         <li class="list">
-          <a href="#">
+          <a href="{{ url('/simulator') }}">
+            <span class="icon"><ion-icon name="analytics-outline"></ion-icon></span>
+            <span class="title">Simulator</span>
+          </a>
+        </li>
+        <li class="list">
+          <a href="{{ url('/information') }}">
             <span class="icon"><ion-icon name="information-circle-outline"></ion-icon></span>
             <span class="title">information</span>
           </a>
         </li>
         <li class="list">
-          <a href="#">
+          <a href="{{ url('/setting') }}">
             <span class="icon"
               ><ion-icon name="settings-outline"></ion-icon
             ></span>
@@ -44,7 +44,7 @@
           </a>
         </li>
         <li class="list">
-          <a href="#">
+          <a href="{{ url('/help') }}">
             <span class="icon"
               ><ion-icon name="help-circle-outline"></ion-icon
             ></span>
