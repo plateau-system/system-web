@@ -11,7 +11,6 @@ class SpotController extends Controller
     {
         $data = $request->all();
         $user = \Auth::user();
-        $spot = Spot::where('users_id', $user['id'])->get();
         $spotAll = Spot::where('users_id', $data['user_id'])->get();
         // 外部のAPIから緯度経度を取得        
         $query = $data['address'];
@@ -39,6 +38,17 @@ class SpotController extends Controller
             'spots_url' => $data['url'],
             'spots_status' => 0,
         ]);
+        $spot = Spot::where('users_id', $user['id'])->get();
+        
         return view('home', compact('user', 'spot'));
     } 
+
+    public function spotDelete($id)
+    {
+        $user = \Auth::user();
+        $spotDelete = Spot::where('id', $id)->delete();
+        $spot = Spot::where('users_id', $user['id'])->get();
+        
+        return view('home', compact('user', 'spot'));
+    }
 }
