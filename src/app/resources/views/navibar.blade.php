@@ -24,13 +24,11 @@
             <span class="title">Chart</span>
             </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/chart-rate/{{ $user['id'] }}">
-                  Rate
-                </a>
-                <a class="dropdown-item" href="/chart-comparison/{{ $user['id'] }}">
-                  comparison
-                </a>
-
+                @foreach($spot as $spot)
+                  <a class="dropdown-item" href="/chart/{{ $spot['id']  }}">
+                    {{ $spot['spots_name'] }}
+                  </a>                
+                @endforeach 
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                     @csrf
                 </form>
@@ -38,19 +36,19 @@
         </li>
         </li>
         <li class="list">
-          <a href="{{ url('/simulator') }}">
+          <a href="/simulator/{{ $user['id'] }}">
             <span class="icon"><ion-icon name="analytics-outline"></ion-icon></span>
             <span class="title">Simulator</span>
           </a>
         </li>
         <li class="list">
-          <a href="{{ url('/information') }}">
+          <a href="/information/{{ $user['id'] }}">
             <span class="icon"><ion-icon name="information-circle-outline"></ion-icon></span>
             <span class="title">information</span>
           </a>
         </li>
         <li class="list">
-          <a href="{{ url('/setting') }}">
+          <a href="/setting/{{ $user['id'] }}">
             <span class="icon"
               ><ion-icon name="settings-outline"></ion-icon
             ></span>
@@ -58,7 +56,7 @@
           </a>
         </li>
         <li class="list">
-          <a href="{{ url('/help') }}">
+          <a href="/help/{{ $user['id'] }}">
             <span class="icon"
               ><ion-icon name="help-circle-outline"></ion-icon
             ></span>

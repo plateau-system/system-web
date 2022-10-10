@@ -24,9 +24,10 @@ class HomeController extends Controller
      */
     public function index()
     {
+        
         $user = \Auth::user();
-
-        return view('home', compact('user'));
+        $spot = Spot::where('users_id', $user['id'])->get();
+        return view('home', compact('user','spot'));
     }
 
     public function top($id)
@@ -36,39 +37,39 @@ class HomeController extends Controller
         return view('home', compact('user','spot'));
     }
 
-    public function chart()
+    public function chart($id)
     {
         $user = \Auth::user();
-
-        return view('home', compact('user'));
+        $spot = Spot::where('users_id', $id)->get();
+        return view('home', compact('user','spot'));
     }
 
-    public function simulator()
+    public function simulator($id)
     {
         $user = \Auth::user();
-
-        return view('home', compact('user'));
+        $spot = Spot::where('users_id', $id)->get();
+        return view('home', compact('user','spot'));
     }
 
-    public function information()
+    public function information($id)
     {
         $user = \Auth::user();
-
-        return view('home', compact('user'));
+        $spot = Spot::where('users_id', $id)->get();
+        return view('home', compact('user','spot'));
     }
 
-    public function setting()
+    public function setting($id)
     {
         $user = \Auth::user();
-
-        return view('home', compact('user'));
+        $spot = Spot::where('users_id', $id)->get();
+        return view('home', compact('user','spot'));
     }
 
-    public function help()
+    public function help($id)
     {
         $user = \Auth::user();
-
-        return view('home', compact('user'));
+        $spot = Spot::where('users_id', $id)->get();
+        return view('home', compact('user','spot'));
     }
 
 

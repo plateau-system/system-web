@@ -94,15 +94,6 @@
                 <div class="col-md-10 p-0">
                     @include('top')
                 </div>
-
-            @elseif (Route::is('chart-rate'))
-                <div class="col-md-10 p-0">
-                    @include('chartRate')
-                </div>
-            @elseif (Route::is('chart-comparison'))
-                <div class="col-md-10 p-0">
-                    @include('chartComparison')
-                </div>
             @elseif (Route::is('chart'))
                 <div class="col-md-10 p-0">
                     @include('chart')
