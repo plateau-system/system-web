@@ -9,21 +9,35 @@
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
+  <div class="container">
+    <div class="row">
     @foreach($spot as $spot)
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-6">
-          <div class="card">
-            <div class="card-name card-header">
-              <a>{{ $spot['spots_name'] }}</a>
+      <div class="container col-6">
+        <div class="row justify-content-center">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-name card-header">
+                <a>{{ $spot['spots_name'] }}</a>
+              </div>
+              <!-- 埋め込み用に変換 -->
+              @php
+                $urlReplace = str_replace('watch?v=', 'embed/', $spot['spots_url']);
+              @endphp
+              <div class="m-2 ms-5">
+              <iframe width="100%" height="315" 
+              src="{{ $urlReplace }}" title="YouTube video player" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+              </iframe>
+              </div>           
             </div>
-            <div class="m-2 ms-5">
-              <a>{{ $spot['spots_name'] }}</a>
-            </div>           
           </div>
         </div>
       </div>
+    @endforeach       
     </div>
-    @endforeach 
+  </div>
+    
   </body>
 </html> 
