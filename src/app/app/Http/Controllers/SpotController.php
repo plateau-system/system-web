@@ -37,7 +37,11 @@ class SpotController extends Controller
             'spots_explanation' => $data['explanation'],            
             'spots_url' => $data['url'],
             'spots_status' => 0,
+            'spots_day' => 'None',
+            'spots_week' => 'None',
+            'spots_month' => 'None'
         ]);
+
         $spot = Spot::where('users_id', $user['id'])->get();
         
         return view('home', compact('user', 'spot'));

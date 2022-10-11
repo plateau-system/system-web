@@ -23,6 +23,9 @@ class CreateSpotsTable extends Migration
             $table->string('spots_explanation');
             $table->string('spots_url');
             $table->integer('spots_status');
+            $table->text('spots_day');
+            $table->text('spots_week');
+            $table->text('spots_month');
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
