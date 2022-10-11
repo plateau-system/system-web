@@ -9,4 +9,4 @@
 言語：PHP,JavaScript  
 フレームワーク:Laravel8(Laravel UI, Bootstrap5)  
 データベース：MySQL  
-その他:Node.js v16.17
+その他:Node.js v16.17,Docker, AWS
