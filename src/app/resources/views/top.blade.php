@@ -20,8 +20,8 @@
                   <a>{{ $spot['spots_name'] }}</a>
                   <span class="d-flex flex-row-reverse">
                     <a class="btn btn-primary m-1" href="/spot-delete/{{ $spot['id'] }}">Delete</a>
-                    <a class="btn btn-primary m-1">Stop</a>
-                    <a class="btn btn-primary m-1">Start</a>                          
+                    <a class="btn btn-primary m-1" href="/spot-stop/{{ $spot['id'] }}">Stop</a>
+                    <a class="btn btn-primary m-1" href="/spot-start/{{ $spot['id'] }}">Start</a>                          
                   </span>
                 </div>
                 <!-- 埋め込み用に変換 -->

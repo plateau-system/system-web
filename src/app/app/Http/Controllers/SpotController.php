@@ -51,4 +51,22 @@ class SpotController extends Controller
         
         return view('home', compact('user', 'spot'));
     }
+
+    public function spotStart($id)
+    {
+        $user = \Auth::user();
+        $spot = Spot::where('users_id', $user['id'])->get();
+        $spotStart = Spot::where('id', $id)->update(['spots_status' => 1]);
+
+        return view('home', compact('user', 'spot'));
+    }
+
+    public function spotStop($id)
+    {
+        $user = \Auth::user();
+        $spot = Spot::where('users_id', $user['id'])->get();
+        $spotStart = Spot::where('id', $id)->update(['spots_status' => 0]);
+
+        return view('home', compact('user', 'spot'));
+    }
 }
