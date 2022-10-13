@@ -58,6 +58,7 @@ class ChartApiController extends Controller
             array_push($motorcycleMonth, $motorcycle);
         }
 
+
         $day = [
             'person' => $personDay,
             'bicycle' => $bicycleDay,

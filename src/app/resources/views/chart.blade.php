@@ -79,7 +79,20 @@
   
     request.open('GET', 'http://localhost:8000/api/chart_all/' + {{ $chartSpot[0]['id'] }}, true);
     request.responseType = 'json';
- 
+
+    // 日付けとグラフを合わせる
+    var date = new Date();
+    var new_date = date.getDate();
+    // 日数計算
+    var last_month = new Date(date.getFullYear(), date.getMonth(), 0);
+    var last_month = last_month.getDate();
+    var this_month = new Date(date.getFullYear(), (date.getMonth()+1), 0);
+    var this_month =this_month.getDate();
+    var last_list = [...Array(last_month)].map((_, i) => i + 1);
+    var this_list = [...Array(new_date)].map((_, i) => i + 1);  
+    var date_list = last_list.concat(this_list);
+    var date_all = date_list.slice(-30);
+
     request.onload = function () {
       var api_data = this.response;
 
@@ -87,7 +100,7 @@
       const line_ctx = document.getElementById('line_chart').getContext('2d');
       line_ctx.canvas.height = 140;
       const line_type = 'line'
-      const line_labels = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
+      const line_labels = date_all;
       const line_data = {
         labels: line_labels,
         datasets: [{
@@ -186,7 +199,7 @@
       const time_ctx = document.getElementById('time_chart').getContext('2d');
       time_ctx.canvas.height = 60;
       const time_type = 'line'
-      const time_labels = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24];
+      const time_labels = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23];
       const time_data = {
         labels: time_labels,
         datasets: [{
