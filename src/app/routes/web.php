@@ -35,7 +35,7 @@ Route::get('/help/{id}', [App\Http\Controllers\HomeController::class, 'help'])->
 Route::get('/chart/{id}', [ChartController::class, 'chart'])->name('chart');
 
 // store
-Route::post('/spot-store', [Spot\SpotController::class, 'spotStore'])->name('top');
-Route::get('/spot-delete/{id}', [Spot\SpotController::class, 'spotDelete'])->name('top');
-Route::get('/spot-start/{id}', [Spot\SpotController::class, 'spotStart'])->name('top');
-Route::get('/spot-stop/{id}', [Spot\SpotController::class, 'spotStop'])->name('top');
+Route::post('/spot-store', [SpotController::class, 'spotStore'])->name('top');
+Route::get('/spot-delete/{id}', [SpotController::class, 'spotDelete'])->name('top');
+Route::get('/spot-start/{id}', [SpotController::class, 'spotStart'])->name('top');
+Route::get('/spot-stop/{id}', [SpotController::class, 'spotStop'])->name('top');

@@ -96,6 +96,38 @@
     request.onload = function () {
       var api_data = this.response;
 
+      var rate_person_sum = api_data['month']['person'].reduce(function(sum, element){
+        return sum + element;
+      }, 0);
+      var rate_bicycle_sum = api_data['month']['bicycle'].reduce(function(sum, element){
+        return sum + element;
+      }, 0);
+      var rate_car_sum = api_data['month']['car'].reduce(function(sum, element){
+        return sum + element;
+      }, 0);
+      var rate_motorcycle_sum = api_data['month']['motorcycle'].reduce(function(sum, element){
+        return sum + element;
+      }, 0);
+
+      var rate_person_ave = rate_person_sum / api_data['day']['person'].length
+      var rate_bicycle_ave = rate_bicycle_sum / api_data['day']['bicycle'].length
+      var rate_car_ave = rate_car_sum / api_data['day']['car'].length
+      var rate_motorcycle_ave = rate_motorcycle_sum / api_data['day']['motorcycle'].length
+
+      if (api_data['month']['person'].length === 0) {
+        rate_person_ave = 1
+      }
+      if (api_data['month']['bicycle'].length === 0) {
+        rate_bicycle_ave = 1
+      }
+      if (api_data['month']['car'].length === 0) {
+        rate_car_ave = 1
+      }
+      if (api_data['month']['motorcycle'].length === 0) {
+        rate_motorcycle_ave = 1
+      }
+      var rate_data = [rate_person_ave, rate_bicycle_ave, rate_car_ave, rate_motorcycle_ave]
+
       // 過去データとの比較(折れ線グラフ)
       const line_ctx = document.getElementById('line_chart').getContext('2d');
       line_ctx.canvas.height = 140;
@@ -154,14 +186,14 @@
       const pie_type = 'doughnut'
       const pie_labels = [
         'person',
-        'car',    
         'bicycle',
-        'motorbike',
+        'car',    
+        'motorcycle',
       ];
       const pie_data = {
         labels: pie_labels,
         datasets: [{
-          data: [55, 96, 88, 42],
+          data: rate_data,
           backgroundColor: [
                     'rgba(255, 99, 132, 0.4)',
                     'rgba(54, 162, 235, 0.4)',
@@ -199,7 +231,7 @@
       const time_ctx = document.getElementById('time_chart').getContext('2d');
       time_ctx.canvas.height = 60;
       const time_type = 'line'
-      const time_labels = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23];
+      const time_labels = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24];
       const time_data = {
         labels: time_labels,
         datasets: [{
