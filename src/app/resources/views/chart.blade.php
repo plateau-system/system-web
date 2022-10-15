@@ -84,9 +84,9 @@
     var date = new Date();
     var new_date = date.getDate();
     // 日数計算
-    var last_month = new Date(date.getFullYear(), date.getMonth(), 0);
+    var last_month = new Date(date.getFullYear(), date.getMonth()-1, 0);
     var last_month = last_month.getDate();
-    var this_month = new Date(date.getFullYear(), (date.getMonth()+1), 0);
+    var this_month = new Date(date.getFullYear(), (date.getMonth()), 0);
     var this_month =this_month.getDate();
     var last_list = [...Array(last_month)].map((_, i) => i + 1);
     var this_list = [...Array(new_date)].map((_, i) => i + 1);  
