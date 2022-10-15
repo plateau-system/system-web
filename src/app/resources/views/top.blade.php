@@ -31,7 +31,7 @@
                   $urlReplace = str_replace('watch?v=', 'embed/', $spot['spots_url']);
                 @endphp
                 <div class="m-2 ms-5">
-                <iframe width="100%" height="315" 
+                <iframe width="92%" height="315" 
                 src="{{ $urlReplace }}" title="YouTube video player" 
                 frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 

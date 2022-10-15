@@ -130,7 +130,7 @@
 
       // 過去データとの比較(折れ線グラフ)
       const line_ctx = document.getElementById('line_chart').getContext('2d');
-      line_ctx.canvas.height = 140;
+      line_ctx.canvas.height = 139;
       const line_type = 'line'
       const line_labels = date_all;
       const line_data = {
@@ -154,7 +154,7 @@
           borderColor: ['rgba(54, 162, 235, 1)',],
         },
         {
-          label: 'motorbike',
+          label: 'motorcycle',
           data: api_data['month']['motorbike'],
           backgroundColor: ['rgba(75, 192, 192, 0.4)',],
           borderColor: ['rgba(75, 192, 192, 1)',],
@@ -182,13 +182,13 @@
 
       // 検出物の割合(円グラフ)
       const pie_ctx = document.getElementById('pie_chart').getContext('2d');
-      pie_ctx.canvas.height = 140;
+      pie_ctx.canvas.height = 150;
       const pie_type = 'doughnut'
       const pie_labels = [
-        'person',
-        'bicycle',
-        'car',    
-        'motorcycle',
+        'p',
+        'b',
+        'c',    
+        'm',
       ];
       const pie_data = {
         labels: pie_labels,

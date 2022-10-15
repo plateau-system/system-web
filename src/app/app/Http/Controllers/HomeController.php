@@ -27,7 +27,7 @@ class HomeController extends Controller
         
         $user = \Auth::user();
         $spot = Spot::where('users_id', $user['id'])->get();
-        return view('home', compact('user','spot'));
+        return view('layouts/app', compact('user','spot'));
     }
 
     public function top($id)

@@ -23,7 +23,7 @@ Route::get('/', function () {
 Auth::routes();
 
 // home
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('top');
 Route::get('/top/{id}', [App\Http\Controllers\HomeController::class, 'top'])->name('top');
 Route::get('/chart/{id}', [App\Http\Controllers\HomeController::class, 'chart'])->name('chart');
 Route::get('/simulator/{id}', [App\Http\Controllers\HomeController::class, 'simulator'])->name('simulator');
