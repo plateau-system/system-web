@@ -8,5 +8,5 @@
 ## 使用技術  
 言語：PHP,JavaScript  
 フレームワーク:Laravel8(Laravel UI, Bootstrap5)  
-データベース：MySQL(ClearDB)
+データベース：MySQL(ClearDB)  
 その他:Node.js v16.17,Docker, Heroku
