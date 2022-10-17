@@ -20,4 +20,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// chart
 Route::get('/chart_all/{id}', [ChartApiController::class, 'chartAll']);
+
+// spot
+Route::get('/spot_all/{id}', [SpotApiController::class, 'spotAll']);
