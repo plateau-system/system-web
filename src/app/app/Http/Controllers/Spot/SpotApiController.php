@@ -46,6 +46,7 @@ class SpotApiController extends Controller
 
             $data = [
                 'id' => $spot[$i]['id'],
+                'spots_name' => $spot[$i]['spots_name'],
                 'spots_address' => $spot[$i]['spots_address'],
                 'spots_latitude' => $spot[$i]['spots_latitude'],
                 'spots_longitude' => $spot[$i]['spots_longitude'],
