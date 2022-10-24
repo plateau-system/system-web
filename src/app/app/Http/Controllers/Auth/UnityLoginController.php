@@ -28,10 +28,10 @@ class UnityLoginController extends Controller
             $token = $user->createToken("login:user{$user->id}")->plainTextToken;
             
             //ログインが成功するとtokenを返す。
-            return response()->json(['token' => $token, 'user' => $user], Response::HTTP_OK);
+            return response()->json(['judge' => 'True', 'token' => $token, 'user' => $user], Response::HTTP_OK);
         }
         // ログイン失敗時の処理
-        return response()->json('Can Not Login.', Response::HTTP_INTERNAL_SERVER_ERROR);
+        return response()->json(['judge' => 'False'], Response::HTTP_INTERNAL_SERVER_ERROR);
     }
 
     public function logout(Request $request){
