@@ -40,7 +40,7 @@
             </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 @foreach($spot as $spots)
-                  <a class="dropdown-item" href="/chart/{{ $spots['id'] }}">
+                  <a class="dropdown-item" href="/map/{{ $spots['id'] }}">
                     {{ $spots['spots_name'] }}
                   </a>                
                 @endforeach 

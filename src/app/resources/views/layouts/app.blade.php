@@ -99,9 +99,9 @@
                     @include('chart')
                 </div>                
 
-            @elseif (Route::is('simulator'))
+            @elseif (Route::is('map'))
                 <div class="col-md-10 p-0">
-                    @include('simulator')
+                    @include('map')
                 </div>
 
             @elseif (Route::is('information'))

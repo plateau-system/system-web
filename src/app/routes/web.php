@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Spot\SpotController;
 use App\Http\Controllers\Chart\ChartController;
+use App\Http\Controllers\Map\MapController;
 
 
 /*
@@ -33,6 +34,9 @@ Route::get('/help/{id}', [App\Http\Controllers\HomeController::class, 'help'])->
 
 // cart
 Route::get('/chart/{id}', [ChartController::class, 'chart'])->name('chart');
+
+// map
+Route::get('/map/{id}', [MapController::class, 'map'])->name('map');
 
 // store
 Route::post('/spot-store', [SpotController::class, 'spotStore'])->name('top');
