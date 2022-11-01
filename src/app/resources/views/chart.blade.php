@@ -91,7 +91,8 @@
     var last_list = [...Array(last_month)].map((_, i) => i + 1);
     var this_list = [...Array(new_date)].map((_, i) => i + 1);  
     var date_list = last_list.concat(this_list);
-    var date_all = date_list.slice(-30);
+    var date_all = date_list.slice(-31);
+    date_all.pop();
 
     request.onload = function () {
       var api_data = this.response;
@@ -196,14 +197,14 @@
           data: rate_data,
           backgroundColor: [
                     'rgba(255, 99, 132, 0.4)',
-                    'rgba(54, 162, 235, 0.4)',
                     'rgba(255, 206, 86, 0.4)',
+                    'rgba(54, 162, 235, 0.4)',
                     'rgba(75, 192, 192, 0.4)',
                 ],
                 borderColor: [
                     'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
                     'rgba(255, 206, 86, 1)',
+                    'rgba(54, 162, 235, 1)',
                     'rgba(75, 192, 192, 1)',
                 ],
         }]

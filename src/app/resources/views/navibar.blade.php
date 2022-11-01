@@ -24,24 +24,33 @@
             <span class="title">Chart</span>
             </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                @foreach($spot as $spot)
-                  <a class="dropdown-item" href="/chart/{{ $spot['id'] }}">
-                    {{ $spot['spots_name'] }}
+                @foreach($spot as $spots)
+                  <a class="dropdown-item" href="/chart/{{ $spots['id'] }}">
+                    {{ $spots['spots_name'] }}
                   </a>                
                 @endforeach 
             </div>
-        </li>
+          </li>
         </li>
         <li class="list">
-          <a href="/simulator/{{ $user['id'] }}">
-            <span class="icon"><ion-icon name="analytics-outline"></ion-icon></span>
-            <span class="title">Simulator</span>
-          </a>
+          <li class="nav-item dropdown">
+            <a id="navbarDropdown" class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" v-pre>
+            <span class="icon"><ion-icon name="map-outline"></ion-icon></span>
+            <span class="title">Map</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                @foreach($spot as $spots)
+                  <a class="dropdown-item" href="/chart/{{ $spots['id'] }}">
+                    {{ $spots['spots_name'] }}
+                  </a>                
+                @endforeach 
+            </div>
+          </li>
         </li>
         <li class="list">
           <a href="/information/{{ $user['id'] }}">
             <span class="icon"><ion-icon name="information-circle-outline"></ion-icon></span>
-            <span class="title">information</span>
+            <span class="title">Information</span>
           </a>
         </li>
         <li class="list">
